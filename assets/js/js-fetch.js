@@ -8,6 +8,10 @@ fetch("https://striveschool-api.herokuapp.com/books")
     .then((bigArray) => {
         console.log(bigArray); // ho tra le mani mille mila oggetti
         buildLibrary(bigArray);
+    })
+
+    .catch((error) => {
+        console.log(error);
     });
 
 const buildLibrary = (item) => {
