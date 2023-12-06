@@ -77,11 +77,10 @@ const buyNow = () => {
                 localStorage.setItem("carrello", JSON.stringify(arrCart));
                 console.log(arrCart);
                 showCart(arrCart);
+                modifyButtonAddToCart(); /*  perchè viene sempre attivata ?? */
             } else {
                 alert("Item is already in the cart.");
             }
-
-            modifyButtonAddToCart(); /*  perchè viene sempre attivata ?? */
         });
     });
 };
