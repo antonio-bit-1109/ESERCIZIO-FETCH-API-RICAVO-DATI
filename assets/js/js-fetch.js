@@ -8,6 +8,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
     .then((bigArray) => {
         console.log(bigArray); // ho tra le mani mille mila oggetti
         buildLibrary(bigArray);
+        eliminaCarrello();
     })
 
     .catch((error) => {
@@ -114,8 +115,6 @@ const eliminaCarrello = () => {
     });
 };
 
-eliminaCarrello();
-
 const modifyButtonAddToCart = () => {
     const allBuyButtons = document.querySelectorAll(".aggiunto-carrello");
     allBuyButtons.forEach((button) => {
@@ -130,7 +129,7 @@ const modifyButtonAddToCart = () => {
                 currentButton.classList.add("btn-success");
                 currentButton.classList.remove("text-light");
                 currentButton.innerHTML = "Aggiungi al carrello";
-            }, 1500);
+            }, 1000);
         });
     });
 };
